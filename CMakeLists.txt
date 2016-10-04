@@ -19,3 +19,5 @@ target_link_libraries(boost_system boost_predef boost_config boost_assert boost_
 
 install(TARGETS boost_system DESTINATION lib)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/boost DESTINATION include)
+
+add_library(boost::system ALIAS boost_system)
