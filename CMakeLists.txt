@@ -15,7 +15,11 @@ else()
 endif(BOOST_SYSTEM_SHARED_LIB)
 
 target_include_directories(boost_system BEFORE PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(boost_system boost_predef boost_config boost_assert boost_core)
+target_link_libraries(boost_system
+  boost::assert
+  boost::config
+  boost::core
+  boost::predef)
 
 install(TARGETS boost_system DESTINATION lib)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/boost DESTINATION include)
